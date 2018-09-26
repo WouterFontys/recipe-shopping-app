@@ -14,16 +14,12 @@ export class RecipeListComponent implements OnInit {
       'https://www.logolynx.com/images/logolynx/82/829ba7822e43ebe89394d1ecbbf152b7.jpeg')
   ];
 
-  @Output() onItemEvent = new EventEmitter<Recipe>();
+  @Output() ItemEvent = new EventEmitter<Recipe>();
 
-  onEvent(recipe: Recipe){
-    this.onItemEvent.emit(recipe);
+  onEvent(recipe: Recipe) {
+    this.ItemEvent.emit(recipe);
   }
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+  constructor() {}
+  ngOnInit() {}
 }
