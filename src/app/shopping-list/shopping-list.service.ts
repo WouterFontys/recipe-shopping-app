@@ -43,8 +43,5 @@ export class ShoppingListService {
     if(idx !== -1) {
       this.ingredients.splice(idx, 1);
     }
-    else {
-      throw new Error(`cannot delete item ${item.name} because it does not exist`)
-    }
   }
 }
