@@ -18,7 +18,17 @@ export class ShoppingListService {
   }
 
   addMultiple(ingredients: Ingredient[]){
-    this.ingredients.push(...ingredients);
+    for(let item of ingredients){
+      const idx = this.ingredients.findIndex(obj => obj.name === item.name);
+      if(idx !== -1){
+        this.ingredients[idx].amount += item.amount;
+      }
+      else {
+        // make sure we have a clean copy
+        const clone_deep = JSON.parse(JSON.stringify(item));
+        this.ingredients.push(clone_deep)
+      }
+    }
     this.ingredientsChanged.emit(this.ingredients.slice())
   }
 }

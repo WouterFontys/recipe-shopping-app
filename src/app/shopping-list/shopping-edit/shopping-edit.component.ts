@@ -20,4 +20,12 @@ export class ShoppingEditComponent implements OnInit {
     const newIngredient = new Ingredient(ingName, ingAmount);
     this.shoppingListService.addIngredient(newIngredient);
   }
+
+  onDeleteItem() {
+
+  }
+
+  onClear() {
+
+  }
 }
