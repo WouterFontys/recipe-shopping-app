@@ -22,10 +22,10 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   onDeleteItem() {
-
+    // this.shoppingListService.deleteItem();
   }
 
   onClear() {
-
+    this.shoppingListService.clear();
   }
 }

@@ -1,8 +1,10 @@
 import {Ingredient} from '../shared/ingredient.model';
 import {EventEmitter} from '@angular/core';
+import {Recipe} from '../recipes/recipe.model';
 
 export class ShoppingListService {
   ingredientsChanged = new EventEmitter<Ingredient[]>();
+
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10)
@@ -30,5 +32,19 @@ export class ShoppingListService {
       }
     }
     this.ingredientsChanged.emit(this.ingredients.slice())
+  }
+
+  clear() {
+    this.ingredients = []
+  }
+
+  deleteItem(item) {
+    const idx = this.ingredients.findIndex(obj => obj.name === item.name);
+    if(idx !== -1) {
+      this.ingredients.splice(idx, 1);
+    }
+    else {
+      throw new Error(`cannot delete item ${item.name} because it does not exist`)
+    }
   }
 }
