@@ -17,6 +17,7 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AppRoutingModule } from './app-routing.module';
     DropdownDirective,
     UsersComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
