@@ -17,7 +17,7 @@ export class RecipeService {
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20)
       ],
-      false,
+      true,
       starRatingEnum.notRated),
     new Recipe('Big Fat Burger',
       'What else you need to say?',

@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { StarRatingComponent } from './recipes/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     UserComponent,
     HomeComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
