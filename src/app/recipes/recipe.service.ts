@@ -38,6 +38,10 @@ export class RecipeService {
     return this.recipes[index];
   }
 
+  getRating(index: number){
+    return this.recipes[index].rating;
+  }
+
   addToShoppingList(ingredients: Ingredient[]){
     this.shoppingListService.addMultiple(ingredients.slice());
   }

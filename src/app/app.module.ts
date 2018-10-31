@@ -37,7 +37,7 @@ import { StarRatingComponent } from './recipes/star-rating/star-rating.component
     HomeComponent,
     RecipeStartComponent,
     RecipeEditComponent,
-    StarRatingComponent
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
