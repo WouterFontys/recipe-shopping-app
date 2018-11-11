@@ -15,10 +15,6 @@ export class ShoppingListService {
 
   addIngredients(ingredients: Ingredient[]){
     for(let item of ingredients){
-      if(typeof item.amount === 'string'){
-        // make sure type === number, otherwise we get string concatenation on += operator
-        item.amount = parseInt(item.amount);
-      }
       const idx = this.ingredients.findIndex(obj => obj.name === item.name);
       if(idx !== -1){
         this.ingredients[idx].amount += item.amount;
