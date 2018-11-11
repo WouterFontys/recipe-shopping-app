@@ -43,6 +43,6 @@ export class RecipeService {
   }
 
   addToShoppingList(ingredients: Ingredient[]){
-    this.shoppingListService.addMultiple(ingredients.slice());
+    this.shoppingListService.addIngredients(ingredients.slice());
   }
 }
