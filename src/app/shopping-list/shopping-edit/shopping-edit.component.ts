@@ -1,28 +1,60 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Ingredient} from '../../shared/ingredient.model';
 import {ShoppingListService} from '../shopping-list.service';
 import {NgForm} from '@angular/forms';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css']
 })
-export class ShoppingEditComponent implements OnInit {
+export class ShoppingEditComponent implements OnInit, OnDestroy {
+  @ViewChild('f') slForm: NgForm;
+  subscription: Subscription;
+  editMode = false;
+  editedItemIndex: number;
+  editedItem: Ingredient;
 
-  constructor(private shoppingListService: ShoppingListService) { }
-  ngOnInit() {}
 
-  onAddItem({value}: NgForm) {
+  constructor(private slService: ShoppingListService) { }
+  ngOnInit() {
+    this.subscription = this.slService.startedEditing
+      .subscribe(
+        (index: number) => {
+          this.editedItemIndex = index;
+          this.editMode = true;
+          this.editedItem = this.slService.getIngredient(index);
+          this.slForm.setValue({
+            name: this.editedItem.name,
+            amount: this.editedItem.amount
+          })
+        }
+      );
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
+
+  onSubmit({value}: NgForm) {
     const newIngredient = new Ingredient(value.name, value.amount);
-    this.shoppingListService.addIngredients([newIngredient]);
+    if(this.editMode){
+      this.slService.updateIngredient(this.editedItemIndex, newIngredient);
+    }
+    else {
+      this.slService.addIngredients([newIngredient]);
+    }
+    this.editMode = false;
+    this.slForm.reset();
   }
 
   onDeleteItem() {
-    // this.shoppingListService.deleteItem();
+    this.slService.deleteItem(this.editedItemIndex);
+    this.onClear();
   }
 
   onClear() {
-    this.shoppingListService.clear();
+    this.editMode = false;
+    this.slForm.reset();
   }
 }
