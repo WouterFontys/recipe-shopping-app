@@ -1,0 +1,28 @@
+<div class="center">
+  <p> Welcome to </p>
+  <hr>
+  <img width="300" alt="Spring rolls" src="./../../shared/images/healthy-spring-roll-recipes.jpg">
+  <h1> Your favorite recipe and shopping list manager </h1>
+  <hr>
+</div>
+<div class="center">
+  <div class="col-xs12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <form (ngSubmit)="onSignin(f)" #f="ngForm">
+      <div class="center form-group">
+        <input type="email"
+               name="email"
+               id="email"
+               placeholder="your.name@fourtress.nl"
+               ngModel>
+      </div>
+      <div class="center form-group">
+        <input type="password"
+               name="password"
+               id="password"
+               placeholder="password"
+               ngModel>
+      </div>
+      <button class="btn btn-success" type="submit" [disabled]="!f.valid" >Log in</button>
+    </form>
+  </div>
+</div>

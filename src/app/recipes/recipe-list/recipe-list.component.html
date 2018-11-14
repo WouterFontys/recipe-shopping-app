@@ -9,10 +9,12 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
+    <mat-accordion>
     <app-recipe-item
       *ngFor="let item of recipes; let i = index"
       [recipe]="item"
       [index]="i"
     ></app-recipe-item>
+    </mat-accordion>
   </div>
 </div>

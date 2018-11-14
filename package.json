@@ -24,7 +24,9 @@
     "core-js": "^2.5.4",
     "npm": "^6.4.1",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "ngx-cookie-service": "latest",
+    "@angular/material": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

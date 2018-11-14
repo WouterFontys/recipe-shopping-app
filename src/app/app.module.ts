@@ -20,6 +20,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { StarRatingComponent } from './recipes/star-rating/star-rating.component';
+import { LoginComponent } from './login/login.component';
+
+
+import {
+  MatExpansionModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -38,11 +44,13 @@ import { StarRatingComponent } from './recipes/star-rating/star-rating.component
     RecipeStartComponent,
     RecipeEditComponent,
     StarRatingComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatExpansionModule
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
