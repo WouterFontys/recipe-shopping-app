@@ -1,53 +1,16 @@
-<a
-  style="cursor: pointer;"
-  [routerLink]="[index]"
-  routerLinkActive="active"
-  class="list-group-item clearfix"
+<mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
 >
-
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-    <p class="list-group-item-text">{{recipe.description}}</p>
-  </div>
-  <span class="pull-right">
-        <img
-          [src]="recipe.imagePath"
-          [alt]="recipe.name"
-          class="img-responsive"
-          style="max-height: 50px;"
-        >
-      </span>
-</a>
-
-
-    <!--<mat-expansion-panel-header>-->
-      <!--<mat-panel-title>-->
-        <!--Personal data-->
-      <!--</mat-panel-title>-->
-      <!--<mat-panel-description>-->
-        <!--Type your name and age-->
-      <!--</mat-panel-description>-->
-    <!--</mat-expansion-panel-header>-->
-
-    <!--<mat-form-field>-->
-      <!--<input matInput placeholder="First name">-->
-    <!--</mat-form-field>-->
-
-    <!--<mat-form-field>-->
-      <!--<input matInput placeholder="Age">-->
-    <!--</mat-form-field>-->
-  <!--</mat-expansion-panel>-->
-  <!--<mat-expansion-panel (opened)="panelOpenState = true"-->
-                       <!--(closed)="panelOpenState = false">-->
-    <!--<mat-expansion-panel-header>-->
-      <!--<mat-panel-title>-->
-        <!--Self aware panel-->
-      <!--</mat-panel-title>-->
-      <!--<mat-panel-description>-->
-        <!--Currently I am {{panelOpenState ? 'open' : 'closed'}}-->
-      <!--</mat-panel-description>-->
-    <!--</mat-expansion-panel-header>-->
-    <!--<p>I'm visible because I am open</p>-->
-  <!--</mat-expansion-panel>-->
-
-
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{recipe.name}}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{recipe.description}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <app-recipe-detail
+      [id]="index"
+  ></app-recipe-detail>
+</mat-expansion-panel>

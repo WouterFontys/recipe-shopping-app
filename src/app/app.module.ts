@@ -21,11 +21,12 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { StarRatingComponent } from './recipes/star-rating/star-rating.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {
   MatExpansionModule
-} from '@angular/material';
+} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    MatExpansionModule
+    MatExpansionModule,
+    BrowserAnimationsModule
   ],
   providers: [RecipeService, ShoppingListService],
   bootstrap: [AppComponent]
