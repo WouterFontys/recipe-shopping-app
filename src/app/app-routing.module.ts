@@ -13,9 +13,9 @@ const appRoutes: Routes = [
   {path: 'recipes', component: RecipesComponent, children: [
       {path: '', component: RecipeStartComponent },
       {path: 'new', component: RecipeEditComponent },
-      {path: ':id', component: RecipeDetailComponent },
-      {path: ':id/edit', component: RecipeEditComponent },
     ]},
+  {path: 'recipe/:id/details', component: RecipeDetailComponent },
+  {path: 'recipe/:id/edit', component: RecipeEditComponent },
   {path: 'shopping-list', component: ShoppingListComponent },
   { path: 'login', component: LoginComponent },
 ];

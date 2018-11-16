@@ -25,8 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {
-  MatExpansionModule
-} from '@angular/material/expansion';
+  MatExpansionModule,
+  MatCardModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import {
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [RecipeService, ShoppingListService],

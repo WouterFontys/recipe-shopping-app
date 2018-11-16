@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Recipe} from '../../recipe.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,9 +10,13 @@ import {Recipe} from '../../recipe.model';
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
   @Input() index: number;
-  panelOpenState = false;
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute
+  ) {}
   ngOnInit() {
+  }
+  onClickSelectDetail() {
+    this.router.navigate(['recipe', this.index, 'details'], {queryParams: {allowEdit: true}});
   }
 }
