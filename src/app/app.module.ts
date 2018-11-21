@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,11 +23,18 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { StarRatingComponent } from './recipes/star-rating/star-rating.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-import {
-  MatExpansionModule
-} from '@angular/material/expansion';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { RegisterComponent } from './register/register.component';
+import { AddClientComponent } from './add-client/add-client.component';
+import { EditClientComponent } from './edit-client/edit-client.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {AuthService} from './services/auth.service';
+import {ClientService} from './services/client.service';
 
 @NgModule({
   declarations: [
@@ -46,15 +54,22 @@ import {
     RecipeEditComponent,
     StarRatingComponent,
     LoginComponent,
+    RegisterComponent,
+    AddClientComponent,
+    EditClientComponent,
+    ClientDetailsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
-    BrowserAnimationsModule
+    AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FlashMessagesModule.forRoot(),
   ],
-  providers: [RecipeService, ShoppingListService],
+  providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
