@@ -23,6 +23,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { StarRatingComponent } from './recipes/star-rating/star-rating.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -35,6 +36,14 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {ClientService} from './services/client.service';
+=======
+
+
+import {
+  MatExpansionModule,
+  MatCardModule
+} from '@angular/material';
+>>>>>>> a7b66a4e7ee16a841501c8dfa3b0ee4ac6d4c9a4
 
 @NgModule({
   declarations: [
@@ -64,10 +73,15 @@ import {ClientService} from './services/client.service';
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
     FlashMessagesModule.forRoot(),
+=======
+    MatCardModule,
+    BrowserAnimationsModule
+>>>>>>> a7b66a4e7ee16a841501c8dfa3b0ee4ac6d4c9a4
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]
