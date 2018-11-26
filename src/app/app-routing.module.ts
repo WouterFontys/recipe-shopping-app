@@ -19,16 +19,13 @@ const appRoutes: Routes = [
       {path: '', component: RecipeStartComponent },
       {path: 'new', component: RecipeEditComponent },
     ]},
-<<<<<<< HEAD
   {path: 'shopping-list', component: ShoppingListComponent, canActivate: [AuthGuard] },
   {path: 'client/add', component: AddClientComponent, canActivate: [AuthGuard]},
   {path: 'client/edit/:id', component: EditClientComponent, canActivate: [AuthGuard]},
   {path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuard]},
-=======
   {path: 'recipe/:id/details', component: RecipeDetailComponent },
   {path: 'recipe/:id/edit', component: RecipeEditComponent },
   {path: 'shopping-list', component: ShoppingListComponent },
->>>>>>> a7b66a4e7ee16a841501c8dfa3b0ee4ac6d4c9a4
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 ];

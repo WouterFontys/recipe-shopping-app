@@ -1,10 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
@@ -14,21 +11,16 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
-import { UsersComponent } from './users/users.component';
-import { UserComponent } from './users/user/user.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { StarRatingComponent } from './recipes/star-rating/star-rating.component';
 import { LoginComponent } from './login/login.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {MatExpansionModule} from '@angular/material/expansion';
 import { RegisterComponent } from './register/register.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
@@ -36,19 +28,13 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {ClientService} from './services/client.service';
-=======
+import {NavbarComponent} from './navbar/navbar.component';
+import {MatCardModule, MatExpansionModule} from '@angular/material';
 
-
-import {
-  MatExpansionModule,
-  MatCardModule
-} from '@angular/material';
->>>>>>> a7b66a4e7ee16a841501c8dfa3b0ee4ac6d4c9a4
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     RecipesComponent,
     RecipeListComponent,
     RecipeDetailComponent,
@@ -56,8 +42,6 @@ import {
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    UsersComponent,
-    UserComponent,
     HomeComponent,
     RecipeStartComponent,
     RecipeEditComponent,
@@ -67,21 +51,18 @@ import {
     AddClientComponent,
     EditClientComponent,
     ClientDetailsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
-<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
     FlashMessagesModule.forRoot(),
-=======
-    MatCardModule,
-    BrowserAnimationsModule
->>>>>>> a7b66a4e7ee16a841501c8dfa3b0ee4ac6d4c9a4
+    MatCardModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]
