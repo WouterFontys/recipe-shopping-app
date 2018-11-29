@@ -8,7 +8,6 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { HomeComponent } from './home/home.component';
@@ -29,7 +28,8 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {ClientService} from './services/client.service';
 import {NavbarComponent} from './navbar/navbar.component';
-import {MatCardModule, MatExpansionModule} from '@angular/material';
+import {MatCardModule, MatExpansionModule, MatInputModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -41,7 +41,6 @@ import {MatCardModule, MatExpansionModule} from '@angular/material';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective,
     HomeComponent,
     RecipeStartComponent,
     RecipeEditComponent,
@@ -62,7 +61,9 @@ import {MatCardModule, MatExpansionModule} from '@angular/material';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FlashMessagesModule.forRoot(),
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    NgbModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]
