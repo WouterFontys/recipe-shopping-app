@@ -6,10 +6,10 @@ export class Recipe {
   public imagePath: string;
   public ingredients: Ingredient[];
   public isPrivate: boolean;
-  public rating: starRatingEnum;
+  public rating: number;
 
-
-  constructor(name: string, desc: string, imagePath: string, ingredients: Ingredient[], isPrivate: boolean, rating: starRatingEnum.notRated) {
+  constructor(name: string, desc: string, imagePath: string, ingredients: Ingredient[],
+               isPrivate: boolean, rating: 0) {
     this.name = name;
     this.description = desc;
     this.imagePath = imagePath;

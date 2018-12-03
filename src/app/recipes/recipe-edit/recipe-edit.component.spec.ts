@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RecipeEditComponent } from './recipe-edit.component';
+import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
+import 'rxjs-compat/add/observable/of';
 
 describe('RecipeEditComponent', () => {
   let component: RecipeEditComponent;
@@ -8,7 +11,12 @@ describe('RecipeEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecipeEditComponent ]
+      declarations: [ RecipeEditComponent ],
+      providers: [
+        { provide: ActivatedRoute, useValue: {
+            params: Observable.of({id: 0})
+    }}
+      ]
     })
     .compileComponents();
   }));
