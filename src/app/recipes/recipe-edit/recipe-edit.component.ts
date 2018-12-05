@@ -12,6 +12,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipe: Recipe;
+  selectedImage = null;
 
   constructor(private recipeService: RecipeService,
               private router: Router,
@@ -28,6 +29,14 @@ export class RecipeEditComponent implements OnInit {
           this.recipe = JSON.parse(JSON.stringify(recipe))
         }
       );
+  }
+
+  onSaveChange() {
+
+  }
+
+  onFileSelected(event) {
+    this.selectedImage = event.target.files[0];
   }
 }
 

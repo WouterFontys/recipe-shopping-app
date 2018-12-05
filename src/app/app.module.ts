@@ -28,9 +28,9 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {ClientService} from './services/client.service';
 import {NavbarComponent} from './navbar/navbar.component';
-import {MatCardModule, MatExpansionModule, MatInputModule} from '@angular/material';
+import {MatCardModule, MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
