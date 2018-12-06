@@ -64,6 +64,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlashMessagesModule.forRoot(),
     MatCardModule,
     MatInputModule,
+    MatFormFieldModule,
     NgbModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
