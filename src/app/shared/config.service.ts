@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ConfigService {
   private env = {
-    baseUrl: 'localhost:4200/api/v1',
+    baseUrl: 'http://localhost:8080/api/v1',
     recipe: '/recipe',
     user: '/user',
     ingredient: '/ingredient'

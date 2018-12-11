@@ -31,6 +31,9 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {MatCardModule, MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { BackendService } from './shared/backend.service';
+import { ConfigService } from './shared/config.service';
 
 @NgModule({
   declarations: [
@@ -65,9 +68,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [RecipeService, ShoppingListService, AuthService, ClientService],
+  providers: [RecipeService, ShoppingListService, AuthService, ClientService, ConfigService, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
