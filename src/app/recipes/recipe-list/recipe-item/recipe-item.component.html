@@ -4,15 +4,18 @@
 >
   <mat-card-header align="center">
     <div mat-card-avatar></div>
-    <mat-card-title align="center">{{recipe.name}}</mat-card-title>
-    <mat-card-subtitle align="center"></mat-card-subtitle>
+    <mat-card-title>{{recipe.name}}</mat-card-title>
+    <mat-card-subtitle>
+    </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="recipe.imagePath" alt="recipe" style="width: 480px; height: 270px; max-width: 640px; max-height: 360px">
+  <img mat-card-image [src]="recipe.imagePath" alt="recipe"
+       style="width: 480px; height: 270px; max-width: 640px; max-height: 360px">
   <mat-card-content>
     <p>
       {{recipe.description}}
     </p>
+    <div class="row" style="margin-left: 140px">
+      <app-star-rating [recipe]="recipe"></app-star-rating>
+    </div>
   </mat-card-content>
-  <mat-card-actions>
-  </mat-card-actions>
 </mat-card>

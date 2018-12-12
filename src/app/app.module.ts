@@ -32,10 +32,9 @@ import {
   MatCardModule,
   MatExpansionModule,
   MatFormFieldModule,
-  MatGridList,
   MatGridListModule,
-  MatGridTile,
-  MatInputModule
+  MatInputModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -72,7 +71,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]

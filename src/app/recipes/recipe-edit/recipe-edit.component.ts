@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Recipe} from '../recipe.model';
 import {RecipeService} from '../recipe.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -16,7 +17,8 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(private recipeService: RecipeService,
               private router: Router,
-              private route: ActivatedRoute
+              private route: ActivatedRoute,
+              private snackbar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -31,12 +33,18 @@ export class RecipeEditComponent implements OnInit {
       );
   }
 
-  onSaveChange() {
-
-  }
+  onSaveChange() {}
 
   onFileSelected(event) {
     this.selectedImage = event.target.files[0];
+  }
+
+  checkValue(evt) {
+    if(evt.target.value < 0) this.openMessage();
+  }
+
+  openMessage() {
+    this.snackbar.open('Ingredient aantal kan niet negatief zijn',  null, {duration: 4000});
   }
 }
 

@@ -51,7 +51,7 @@
           <input matInput placeholder="ingredient name" [(value)]="ingredient.name">
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="number" placeholder="ingredient amount" [(value)]="ingredient.amount">
+          <input matInput type="number" placeholder="ingredient amount" (change)="checkValue($event)" [(value)]="ingredient.amount">
         </mat-form-field>
       </li>
     </ul>
