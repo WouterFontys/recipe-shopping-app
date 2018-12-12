@@ -28,8 +28,15 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {ClientService} from './services/client.service';
 import {NavbarComponent} from './navbar/navbar.component';
-import {MatCardModule, MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {
+  MatCardModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatGridList,
+  MatGridListModule,
+  MatGridTile,
+  MatInputModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -50,7 +57,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddClientComponent,
     EditClientComponent,
     ClientDetailsComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    NgbModule
+    MatGridListModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-lg-12" align="center">
     <button
       class="btn btn-primary"
       (click)="onNewRecipe()"
@@ -7,12 +7,13 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12" >
-    <app-recipe-item
-      *ngFor="let item of recipes; let i = index"
+<mat-grid-list cols="3" rowHeight="675" style="width: 1200px;">
+  <mat-grid-tile *ngFor="let item of recipes; let i = index">
+    <app-recipe-item align="center" style="height: 675px;"
       [recipe]="item"
-      [index]="i"
-    ></app-recipe-item>
-  </div>
-</div>
+      [index]="i">
+    </app-recipe-item>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
