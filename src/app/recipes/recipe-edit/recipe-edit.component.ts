@@ -18,7 +18,7 @@ export class RecipeEditComponent implements OnInit {
   constructor(private recipeService: RecipeService,
               private router: Router,
               private route: ActivatedRoute,
-              private snackbar: MatSnackBar
+              private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class RecipeEditComponent implements OnInit {
   }
 
   openMessage() {
-    this.snackbar.open('Ingredient aantal kan niet negatief zijn',  null, {duration: 4000});
+    this.snackBar.open('Ingredient aantal kan niet negatief zijn',  null, {duration: 4000});
   }
 }
 

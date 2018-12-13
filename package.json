@@ -33,6 +33,7 @@
     "firebase-functions": "^2.1.0",
     "firebase-mock": "^2.2.10",
     "ngx-cookie-service": "latest",
+    "ngx-file-helpers": "^1.1.0",
     "npm": "^6.4.1",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",

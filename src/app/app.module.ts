@@ -34,9 +34,13 @@ import {
   MatFormFieldModule,
   MatGridListModule,
   MatInputModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatButtonModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FileHelpersModule } from 'ngx-file-helpers';
+import { FilePickerComponent } from './shared/file-picker/file-picker.component';
+import { ReadModePipe } from "./shared/read-mode.pipe";
 
 @NgModule({
   declarations: [
@@ -56,7 +60,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddClientComponent,
     EditClientComponent,
     ClientDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilePickerComponent,
+    ReadModePipe
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
+    MatButtonModule,
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -72,7 +79,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatFormFieldModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FileHelpersModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService],
   bootstrap: [AppComponent]
