@@ -43,7 +43,7 @@ import { BackendService } from './shared/backend.service';
 import { ConfigService } from './shared/config.service';
 import { FileHelpersModule } from 'ngx-file-helpers';
 import { FilePickerComponent } from './shared/file-picker/file-picker.component';
-import { ReadModePipe } from "./shared/read-mode.pipe";
+import { ReadModePipe } from './shared/read-mode.pipe';
 
 @NgModule({
   declarations: [
@@ -81,8 +81,7 @@ import { ReadModePipe } from "./shared/read-mode.pipe";
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    NgbModule,
-    HttpClientModule
+    HttpClientModule,
     MatGridListModule,
     MatSnackBarModule,
     FileHelpersModule
