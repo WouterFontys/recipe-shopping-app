@@ -5,13 +5,14 @@
       [src]="recipe.imageUrl"
       alt="{{recipe.name}}"
       class="img-responsive"
-      style="max-height: 150px"
+      style="width: 480px; height: 270px; max-width: 640px; max-height: 360px"
     >
-    <i class="fas fa-file-upload">
-      <input type="file" (change)="onFileSelected($event)">
-    </i>
-
   </div>
+</div>
+<div class="row">
+  <!--<input type="file" (change)="onFileSelected($event)">-->
+  <app-file-picker [picked]="recipe.imagePath"></app-file-picker>
+  <br>
 </div>
 <div class="row">
   <div class="col-xs-12">
@@ -51,7 +52,7 @@
           <input matInput placeholder="ingredient name" [(value)]="ingredient.name">
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="number" placeholder="ingredient amount" [(value)]="ingredient.amount">
+          <input matInput type="number" placeholder="ingredient amount" (change)="checkValue($event)" [(value)]="ingredient.amount">
         </mat-form-field>
       </li>
     </ul>

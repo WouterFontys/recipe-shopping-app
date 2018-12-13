@@ -28,12 +28,22 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './services/auth.service';
 import {ClientService} from './services/client.service';
 import {NavbarComponent} from './navbar/navbar.component';
-import {MatCardModule, MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {
+  MatCardModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatButtonModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { BackendService } from './shared/backend.service';
 import { ConfigService } from './shared/config.service';
+import { FileHelpersModule } from 'ngx-file-helpers';
+import { FilePickerComponent } from './shared/file-picker/file-picker.component';
+import { ReadModePipe } from "./shared/read-mode.pipe";
 
 @NgModule({
   declarations: [
@@ -54,6 +64,8 @@ import { ConfigService } from './shared/config.service';
     EditClientComponent,
     ClientDetailsComponent,
     NavbarComponent,
+    FilePickerComponent,
+    ReadModePipe
   ],
   imports: [
     BrowserModule,
@@ -61,6 +73,7 @@ import { ConfigService } from './shared/config.service';
     FormsModule,
     AppRoutingModule,
     MatExpansionModule,
+    MatButtonModule,
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -70,6 +83,9 @@ import { ConfigService } from './shared/config.service';
     MatFormFieldModule,
     NgbModule,
     HttpClientModule
+    MatGridListModule,
+    MatSnackBarModule,
+    FileHelpersModule
   ],
   providers: [RecipeService, ShoppingListService, AuthService, ClientService, ConfigService, BackendService],
   bootstrap: [AppComponent]

@@ -17,13 +17,6 @@ export class StarRatingComponent implements OnInit {
               private route: ActivatedRoute
   ) { }
   ngOnInit() {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.recipe = this.recipeService.getRecipe(+params['id']);
-        }
-      );
-
     this.inputName = this.recipe.name + '_rating';
   }
 

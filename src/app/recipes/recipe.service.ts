@@ -40,8 +40,8 @@ export class RecipeService {
       null,
       'Swedish meatballs',
       'Taste as delicious as the women are in Sweden!',
-      'https://therecipecritic.com/wp-content/uploads/2016/08/swedishmeatballs2-650x975.jpg',
       25,
+      'https://4.bp.blogspot.com/-QU9Pkk9Ejk8/WoCEqUN--8I/AAAAAAAAz-w/6u7mngNwbOIuK1DDqLfZ8ru7ogYHk_kTQCLcBGAs/s1600/Creamy-Swedish-Meatballs2-WIDE.jpg',
       [
         new Ingredient(null, 'Meat', 1),
         new Ingredient(null, 'Balls', 2)
@@ -57,8 +57,8 @@ export class RecipeService {
       null,
       'Stroganoff',
       'Really really tasty stroganoff',
-      'https://www.cscassets.com/recipes/wide_cknew/wide_23916.jpg',
       30,
+      'https://www.sameneenkoekopen.nl/uploads/images/recept/Bieflapjes-Stroganoff.jpg',
       [
         new Ingredient(null, 'Beef', 1),
         new Ingredient(null, 'Stroganoff sauce', 2),
