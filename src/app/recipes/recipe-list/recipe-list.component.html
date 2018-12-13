@@ -7,8 +7,8 @@
   </div>
 </div>
 <hr>
-<mat-grid-list cols="3" rowHeight="675" style="width: 1200px;">
-  <mat-grid-tile *ngFor="let item of recipes; let i = index">
+<mat-grid-list cols="3" rowHeight="675" style="width: 1510px">
+  <mat-grid-tile *ngFor="let item of recipes; let i = index" style="margin: 0px 10px 0px 10px;">
     <app-recipe-item align="center" style="height: 675px;"
       [recipe]="item"
       [index]="i">
