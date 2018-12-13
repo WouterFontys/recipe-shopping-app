@@ -38,6 +38,9 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { BackendService } from './shared/backend.service';
+import { ConfigService } from './shared/config.service';
 import { FileHelpersModule } from 'ngx-file-helpers';
 import { FilePickerComponent } from './shared/file-picker/file-picker.component';
 import { ReadModePipe } from "./shared/read-mode.pipe";
@@ -78,11 +81,13 @@ import { ReadModePipe } from "./shared/read-mode.pipe";
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
+    NgbModule,
+    HttpClientModule
     MatGridListModule,
     MatSnackBarModule,
     FileHelpersModule
   ],
-  providers: [RecipeService, ShoppingListService, AuthService, ClientService],
+  providers: [RecipeService, ShoppingListService, AuthService, ClientService, ConfigService, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
