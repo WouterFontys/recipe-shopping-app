@@ -11,7 +11,7 @@ import {ShoppingListService} from '../shopping-list/shopping-list.service';
 export class RecipeService {
 
   constructor(private shoppingListService: ShoppingListService) {}
-    
+
   recipesChanged = new Subject<Recipe[]>();
 
   // private recipes: Recipe[] = [];
@@ -40,8 +40,8 @@ export class RecipeService {
       null,
       'Swedish meatballs',
       'Taste as delicious as the women are in Sweden!',
-      25,
       'https://4.bp.blogspot.com/-QU9Pkk9Ejk8/WoCEqUN--8I/AAAAAAAAz-w/6u7mngNwbOIuK1DDqLfZ8ru7ogYHk_kTQCLcBGAs/s1600/Creamy-Swedish-Meatballs2-WIDE.jpg',
+      25,
       [
         new Ingredient(null, 'Meat', 1),
         new Ingredient(null, 'Balls', 2)
@@ -57,8 +57,8 @@ export class RecipeService {
       null,
       'Stroganoff',
       'Really really tasty stroganoff',
-      30,
       'https://www.sameneenkoekopen.nl/uploads/images/recept/Bieflapjes-Stroganoff.jpg',
+      30,
       [
         new Ingredient(null, 'Beef', 1),
         new Ingredient(null, 'Stroganoff sauce', 2),

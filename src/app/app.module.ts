@@ -81,8 +81,7 @@ import { ReadModePipe } from "./shared/read-mode.pipe";
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    NgbModule,
-    HttpClientModule
+    HttpClientModule,
     MatGridListModule,
     MatSnackBarModule,
     FileHelpersModule
