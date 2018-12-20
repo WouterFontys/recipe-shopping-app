@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilePickerComponent } from './file-picker.component';
+import {ReadModePipe} from "../read-mode.pipe";
+import {FileHelpersModule} from "ngx-file-helpers";
 
 describe('FilePickerComponent', () => {
   let component: FilePickerComponent;
@@ -8,7 +10,8 @@ describe('FilePickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilePickerComponent ]
+      declarations: [ FilePickerComponent, ReadModePipe],
+      imports: [FileHelpersModule]
     })
     .compileComponents();
   }));

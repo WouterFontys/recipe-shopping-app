@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
         // this.flashMessage.show('you are now logged in', {
         //   cssClass: 'alert-success', timeout: 4000
         // });
-        this.backendService.getRecipes();
         this.router.navigate(['/recipes']);
       }).catch(
       err => {

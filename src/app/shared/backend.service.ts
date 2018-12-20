@@ -4,30 +4,15 @@ import 'rxjs/Rx';
 
 import { ConfigService } from './config.service';
 import { Recipe } from '../recipes/recipe.model';
-import { RecipeService } from '../recipes/recipe.service';
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class BackendService {
-
     constructor(private configService: ConfigService,
-                private httpClient: HttpClient,
-                private recipeService: RecipeService) {}
+                private httpClient: HttpClient) {}
 
-
-    getRecipes() {
+    getRecipes(): Observable<Recipe[]> {
         const url = this.configService.getRecipeUrl();
-        this.httpClient.get<Recipe[]>(url)
-                       .map(
-                           (recipes) => {
-                               return recipes;
-                           }
-                       )
-                       .subscribe(
-                           (recipes: Recipe[]) => {
-                            this.recipeService.setRecipes(recipes);
-                           }
-                       );
-        
+        return this.httpClient.get<Recipe[]>(url);
     }
-
 }
