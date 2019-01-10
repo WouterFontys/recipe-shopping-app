@@ -9,17 +9,17 @@ import { FilePickerDirective, ReadFile, ReadMode } from 'ngx-file-helpers';
 })
 export class FilePickerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @ViewChild(FilePickerDirective)
+  private filePicker;
 
   public readMode = ReadMode.dataURL;
   public picked: ReadFile;
   public status: string;
 
-  @ViewChild(FilePickerDirective)
-  private filePicker;
+  constructor() { }
+
+  ngOnInit() {
+  }
 
   onReadStart(fileCount: number) {
     this.status = `Reading ${fileCount} file(s)...`;

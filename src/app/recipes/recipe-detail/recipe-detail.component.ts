@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Recipe} from '../recipe.model';
 import {RecipeService} from '../recipe.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -11,12 +12,20 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   @Input() id: number;
+  recipes: Recipe[];
+  private subscription: Subscription;
 
   constructor(private recipeService: RecipeService,
               private router: Router,
               private route: ActivatedRoute
   ) {}
   ngOnInit() {
+    this.subscription = this.recipeService.getRecipes().subscribe(
+      (recipes: Recipe[]) => {
+        this.recipes = recipes;
+        this.recipeService.setRecipes(recipes);
+      }
+    );
     this.route.params
       .subscribe(
         (params: Params) => {
